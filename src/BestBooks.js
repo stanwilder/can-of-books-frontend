@@ -8,6 +8,12 @@ class BestBooks extends React.Component {
     }
   }
 
+  getBooks = async () => {
+    try {
+      let theBooks = await axios.get(``)
+    } catch 
+  }
+
   /* TODO: Make a GET request to your API to fetch all the books from the database  */
 
   render() {
