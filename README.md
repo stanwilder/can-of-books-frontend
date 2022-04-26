@@ -25,12 +25,12 @@
 Time Estimates
 For each of the lab features, make an estimate of the time it will take you to complete the feature, and record your start and finish times for that feature:
 
-Name of feature: ________________________________
+Name of feature: Can of Books
 
-Estimate of time needed to complete: _____
+Estimate of time needed to complete: 10 hours
 
-Start time: _____
+Start time: 1 pm
 
-Finish time: _____
+Finish time: 815 pm
 
-Actual time needed to complete: _____
+Actual time needed to complete: 7 hours 15 minutes
