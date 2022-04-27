@@ -1,7 +1,9 @@
 import React from 'react';
 import axios from "axios";
 import { Carousel } from 'react-bootstrap';
+// import 
 
+let SERVER = process.env.REACT_APP_SERVER;
 
 class BestBooks extends React.Component {
   constructor(props) {
@@ -11,9 +13,10 @@ class BestBooks extends React.Component {
     }
   }
 
-  getBooks = async () => {
+  postBook = async () => {
     try {
       let theBooks = await axios.get(`${SERVER}/books`);
+      console.log(theBooks.data);
       this.setState({
         books: theBooks.data
       })
@@ -24,13 +27,30 @@ class BestBooks extends React.Component {
   }
 
   componentDidMount() {
-    this.getBooks()
+    this.postBook()
+  }
+
+  // add book day 2
+  addBook = async (b) => {
+    try {
+      let addBookUrl = `${SERVER}/add`
+      let newBook = await axios.post(addBookUrl, b);
+      this.setState({
+        books: [...this.state.books, newBook]
+      })
+
+
+    } catch (error) {
+      console.log('There is an error: ', error.response.data)
+
+    }
+
   }
 
 
   render() {
     let books = this.state.books.map((book, idx) => (
-      <p key ={idx}>{book.title} Author {book.author}</p>
+      <p key={idx}>{book.title} Description {book.description}</p>
     ))
     /* TODO: render all the books in a Carousel */
 
@@ -51,7 +71,11 @@ class BestBooks extends React.Component {
           )}
           </Carousel>
           {/* help from TA */}
+      
       </>
+
+
+
     )
   }
 }

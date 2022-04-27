@@ -17,10 +17,10 @@ class App extends React.Component {
         <Router>
           <Header />
           <Switch>
-            <Route exact path="/BestBooks">
+            <Route exact path="/">
               <BestBooks />
             </Route>
-            <Route exact path="/About">
+            <Route path="/About">
               <About />
             </Route>
             {/* PLACEHOLDER: add a route with a path of '/about' that renders the `About` component */}
